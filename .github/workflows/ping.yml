@@ -1,0 +1,14 @@
+name: Ping Server
+
+on:
+  schedule:
+    # Runs every 5 minutes
+    - cron: '*/05 * * * *'
+
+jobs:
+  ping:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Ping Server
+        run: |
+          curl -s https://railwaybackend-ludo.onrender.com/welcome > /dev/null
